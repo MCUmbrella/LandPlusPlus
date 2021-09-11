@@ -57,8 +57,7 @@ public class Main extends JavaPlugin {
 		// commands //
 		
 		this.getCommand("land").setExecutor(new CommandManager());
-		this.getCommand("l").setExecutor(new CommandManager());
-		
+
 		// functions //
 		
 		getFunction(new Function_TnT());

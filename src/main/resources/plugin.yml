@@ -1,5 +1,8 @@
 name: Land
 version: ${project.version}
 main: de.hirnmoritz.main.Main
-api-version: 1.17
+api-version: 1.16
 authors: [DasJava]
+commands:
+  land:
+    description: Main command of Land plugin
