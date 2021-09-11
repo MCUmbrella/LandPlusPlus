@@ -1,0 +1,5 @@
+name: Land
+version: ${project.version}
+main: de.hirnmoritz.main.Main
+api-version: 1.17
+authors: [DasJava]
