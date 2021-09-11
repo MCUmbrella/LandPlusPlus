@@ -1,0 +1,18 @@
+## set your prefix ##
+prefix: "&3&lLand &f>>"
+
+## land settings ##
+land-allow-in-worlds:
+ - world
+ - land
+ 
+land-max-claims: 3 # note: only the first 5 lands will be shown in the gui #
+land-border: true
+land-border-material: SANDSTONE
+land-border-type: WALL # you can choose between 'WALL' and 'CORNER' #
+
+## admin settings ##
+admin-show-info: true
+
+## graphical user interface -gui ##
+gui: true #note: gui does only work on minecraft version 1.13 or higher#
