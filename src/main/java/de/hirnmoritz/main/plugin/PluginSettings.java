@@ -2,6 +2,7 @@ package de.hirnmoritz.main.plugin;
 
 import java.util.ArrayList;
 
+import de.hirnmoritz.main.messages.I18nUtil;
 import org.bukkit.ChatColor;
 import org.bukkit.Material;
 
@@ -11,6 +12,7 @@ import de.hirnmoritz.main.land.border.BorderType;
 public abstract class PluginSettings {
 	
 	public static String prefix = "error, config could not be loaded";
+	public static String language = "en_US";
 	
 	public static boolean show_admin_info = true;
 	
@@ -24,6 +26,9 @@ public abstract class PluginSettings {
 	
 	public static void init() {
 		prefix = ChatColor.translateAlternateColorCodes('&', Main.config.getString("prefix"));
+		language = Main.config.getString("language");
+		I18nUtil.setLanguage(language);
+		Main.getMain().getLogger().info("Language: "+I18nUtil.getLocalizedMessage("language"));
 		
 		show_admin_info = Main.config.getBoolean("admin-show-info");
 		

@@ -55,7 +55,7 @@ public class Land {
 			this.owner = UUIDManager.getUUID(owner);
 			this.middle = ChunkLocation.getMiddle(chunk, height).add(0, 1, 0);
 			
-			if(players.getConfig().getBoolean(UUIDManager.getUUID(owner)) == false){
+			if(!players.getConfig().getBoolean(UUIDManager.getUUID(owner))){
 				players.getConfig().set(UUIDManager.getUUID(owner)+".hasLand", true);
 				final int lands = players.getConfig().getInt(UUIDManager.getUUID(owner)+".lands");
 				players.getConfig().set(UUIDManager.getUUID(owner)+".lands", lands+1);
