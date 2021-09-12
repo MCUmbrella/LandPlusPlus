@@ -2,6 +2,7 @@ package de.hirnmoritz.main.commandmanager.commands;
 
 import java.util.UUID;
 
+import de.hirnmoritz.main.messages.I18nUtil;
 import org.bukkit.Bukkit;
 import org.bukkit.OfflinePlayer;
 import org.bukkit.entity.Player;
@@ -29,23 +30,23 @@ public class Command_Land_Info implements Listener {
 				if(manager.isClaimed()) {
 					
 					new PrefixWriter().write("§8"+Chat.LINE.getIndex()).send(player);
-					new PrefixWriter().write("§a§oName: §r§6§l"+ l.getName()).send(player);
+					new PrefixWriter().write(I18nUtil.getLocalizedMessage("name")+ l.getName()).send(player);
 					final OfflinePlayer p = Bukkit.getServer().getOfflinePlayer(UUID.fromString(l.getOwner()));
-					new PrefixWriter().write("§a§oOwner: §r§6"+ p.getName()).send(player);
+					new PrefixWriter().write(I18nUtil.getLocalizedMessage("owner")+ p.getName()).send(player);
 					
 					new PrefixWriter().write(Chat.PLACEHOLDER.getIndex()).send(player);					
 					
-					new PrefixWriter().write("§c§oMembers:").send(player);
+					new PrefixWriter().write(I18nUtil.getLocalizedMessage("members")).send(player);
 					
 					final String[] members = l.getMembers().toArray(new String[l.getMembers().size()]);
-					
-					for(int i=0; i<members.length; i++) {
-						new PrefixWriter().write(" "+Chat.SEPERATOR.getIndex()+" §e"+ members[i]).send(player);
+
+					for (String member : members) {
+						new PrefixWriter().write(" " + Chat.SEPERATOR.getIndex() + " §e" + member).send(player);
 					}
 					
 					new PrefixWriter().write(Chat.PLACEHOLDER.getIndex()).send(player);
 					
-					new PrefixWriter().write("§3Settings:").send(player);
+					new PrefixWriter().write(I18nUtil.getLocalizedMessage("settings")).send(player);
 					new PrefixWriter().write("§f- §6allowBreak §8("+ColoredBoolean.get(l.getSettings().isAllowBreak())+"§8)").send(player);
 					new PrefixWriter().write("§f- §6allowBuild §8("+ColoredBoolean.get(l.getSettings().isAllowBuild())+"§8)").send(player);
 					new PrefixWriter().write("§f- §6allowPvP §8("+ColoredBoolean.get(l.getSettings().isAllowPvP())+"§8)").send(player);
@@ -61,7 +62,7 @@ public class Command_Land_Info implements Listener {
 					
 				}else {
 					new PrefixWriter().write("§8"+Chat.LINE.getIndex()).send(player);
-					new PrefixWriter().write("§cLand is still not claimed!").send(player);
+					new PrefixWriter().write(I18nUtil.getLocalizedMessage("land-not-claimed")).send(player);
 					new PrefixWriter().write("§8"+Chat.LINE.getIndex()).send(player);
 				}
 					

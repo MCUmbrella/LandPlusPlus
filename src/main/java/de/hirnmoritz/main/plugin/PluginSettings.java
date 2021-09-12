@@ -28,7 +28,7 @@ public abstract class PluginSettings {
 		prefix = ChatColor.translateAlternateColorCodes('&', Main.config.getString("prefix"));
 		language = Main.config.getString("language");
 		I18nUtil.setLanguage(language);
-		Main.getMain().getLogger().info("Language: "+I18nUtil.getLocalizedMessage("language"));
+		Main.getMain().getLogger().info("Language: "+I18nUtil.getLocalizedMessage("language")+" by "+I18nUtil.getLocalizedMessage("language-file-contributor"));
 		
 		show_admin_info = Main.config.getBoolean("admin-show-info");
 		

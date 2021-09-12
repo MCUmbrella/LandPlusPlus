@@ -1,4 +1,6 @@
 language: "English(US)"
+language-file-contributor: "DasJava, MCUmbrella"
+plugin-developer: "§fPlugin was developed by §6DasJava"
 
     ##### On world interaction #####
 cant-break: "§cYou can't break blocks on this land!"
@@ -59,7 +61,6 @@ sethome-success: "§aChanged lands home to your current location!"
 setting-not-found: "§cSetting §6{NAME} §cnot found!"
 settings-usage: "§cType: §6/land settings <setting> §ato enable/disable it."
 settings-list: "§aA list of setting is listed below!"
-settings: "§3Settings:"
 allowBreak-disabled: "§cBlocks can't be destroyed by players"
 allowBreak-enabled: "§aBlocks can be destroyed by players"
 allowBuild-disabled: "§cBlocks can't be placed by players!"
@@ -83,6 +84,25 @@ allowUseFurnace-enabled: "§aFurnaces can be used by players!"
 # /land visit
 enter-name-first: "§cEnter name fist!"
 visit-success: "§aYou haven been teleported!"
+# /land info
+name: "§a§oName: §r§6§l"
+owner: "§a§oOwner: §r§6"
+members: "§c§oMembers:"
+settings: "§3Settings:"
+# /land help
+help-claim: "§6/land claim <name> §f>> §ato claim the land around you"
+help-delete: "§6/land delete §f>> §ato leave your current land"
+help-home: "§6/land home <name> §f>> §ato go on your land"
+help-settings: "§6/land settings §f>> §ato change land settings"
+help-info: "§6/land info §f>> §ato get information about the land"
+help-list: "§6/land list §f>> §ato to get a list with all your lands"
+help-add: "§6/land add <player> §f>> §ato add a member to your land"
+help-kick: "§6/land kick <player> §f>> §ato kick a member"
+help-setBorderHeight: "§6/land setBorderHeight <height>"
+help-setBorderMaterial: "§6/land setBorderMaterial <material>"
+help-visit: "§6/land visit <name> §f>> §ato visit an other land"
+help-middle: "§6/land middle §f>> §ato go in the middle of the land"
+help-setHome: "§6/land setHome §f>> §ato set the lands home point!"
 
     ##### Land GUI: Titles #####
 guiTitle-main: " §3Menu"

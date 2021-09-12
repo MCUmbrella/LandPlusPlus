@@ -43,8 +43,8 @@ public class GuiFunction implements Listener {
 					case 23: final Gui g2 = new Gui(new Page_LandSettings(PluginSettings.prefix+I18nUtil.getLocalizedMessage("guiTitle-settings")));  g2.send(player); break;
 					case 10: new Command_Land_Help().onCommand(new PlayerCommandPreprocessEvent(player, "/land help")); player.closeInventory(); break;
 					case 28: new Command_Land_Info().onCommand(new PlayerCommandPreprocessEvent(player, "/land info")); player.closeInventory(); break;
-					case 16: new PrefixWriter().write("§aDo §6/land add <player>").send(player); player.closeInventory(); break; //TODO: i18n
-					case 34: new PrefixWriter().write("§aDo §6/land kick <player>").send(player); player.closeInventory(); break; //TODO: i18n
+					case 16: new PrefixWriter().write(I18nUtil.getLocalizedMessage("help-add")).send(player); player.closeInventory(); break;
+					case 34: new PrefixWriter().write(I18nUtil.getLocalizedMessage("help-kick")).send(player); player.closeInventory(); break;
 
 					default: break;
 
