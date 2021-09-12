@@ -6,7 +6,7 @@
 
     <groupId>de.hirnmoritz</groupId>
     <artifactId>land</artifactId>
-    <version>3.1</version>
+    <version>5.2</version>
     <packaging>jar</packaging>
 
     <name>Land</name>
