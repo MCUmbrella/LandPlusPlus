@@ -4,6 +4,7 @@ import java.util.ArrayList;
 
 import de.hirnmoritz.main.messages.I18nUtil;
 import org.bukkit.Location;
+import org.bukkit.Material;
 import org.bukkit.block.Block;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
@@ -33,7 +34,7 @@ public class BorderProtection_Break implements Listener {
 				if(border.contains(block.getLocation())) {
 					if(manager.isClaimed()) {
 						if(land.getOwner().equalsIgnoreCase(UUIDManager.getUUID(player))) {
-							if(block.getY() != land.getBorderHeight()) {
+							if(land.getBorderMaterial() == Material.AIR || block.getY() != land.getBorderHeight()) {
 								event.setCancelled(false);
 							}else {
 								new PrefixWriter().write(I18nUtil.getLocalizedMessage("cant-break-border")).send(player);
