@@ -1,5 +1,6 @@
 package de.hirnmoritz.main.commandmanager.commands;
 
+import de.hirnmoritz.main.messages.I18nUtil;
 import org.bukkit.Bukkit;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
@@ -17,7 +18,7 @@ public class Command_Land_Kick implements Listener {
 	public void onCommand(PlayerCommandPreprocessEvent event) {
 		final Player player = event.getPlayer();
 		
-		if(event.getMessage().startsWith("/land kick") || event.getMessage().startsWith("/l kick")) {
+		if(event.getMessage().startsWith("/land kick")) {
 			
 			final de.hirnmoritz.main.land.LandManager manager = new de.hirnmoritz.main.land.LandManager(new LandID(player.getLocation().getChunk()));
 			
@@ -35,23 +36,23 @@ public class Command_Land_Kick implements Listener {
 							 land.removeMember(args[2]);
 							 land.save();
 								 
-							 new PrefixWriter().write("§aSuccessfully removed: §6"+args[2]+" §afrom your land!").send(player);
+							 new PrefixWriter().write(I18nUtil.getLocalizedMessage("kickmember-success").replace("NAME",args[2])).send(player);
 						
 						}else {
-							new PrefixWriter().write("§cPlayer not found!").send(player);
+							new PrefixWriter().write(I18nUtil.getLocalizedMessage("player-not-found")).send(player);
 						}
 						
 					 }else {
-						 new PrefixWriter().write("§cEnter an available name first!").send(player);
+						 new PrefixWriter().write(I18nUtil.getLocalizedMessage("invalid-player-name")).send(player);
 					 }
 						
 	
 				}else {
-					new PrefixWriter().write("§cYou are not the §6Owner §cof this land!").send(player);
+					new PrefixWriter().write(I18nUtil.getLocalizedMessage("not-owner")).send(player);
 				}				
 					
 			}else {
-				new PrefixWriter().write("§cYou are not on your land!").send(player);
+				new PrefixWriter().write(I18nUtil.getLocalizedMessage("not-on-land")).send(player);
 			}
 			
 		}

@@ -2,6 +2,7 @@ package de.hirnmoritz.main.commandmanager.commands;
 
 import java.util.ArrayList;
 
+import de.hirnmoritz.main.messages.I18nUtil;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
@@ -22,7 +23,7 @@ public class Command_Land_List implements Listener {
 			final String[] lands = contents.toArray(new String[contents.size()]);
 			
 			new PrefixWriter().write("§8"+Chat.LINE.getIndex()).send(player);
-			new PrefixWriter().write("§3Your lands:").send(player);
+			new PrefixWriter().write(I18nUtil.getLocalizedMessage("list-title")).send(player);
 			for(int i=0; i<lands.length; i++) {
 				new PrefixWriter().write(" §f- §6"+lands[i]).send(player);
 			}

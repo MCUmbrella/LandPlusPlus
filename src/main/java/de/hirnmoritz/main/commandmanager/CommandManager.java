@@ -1,5 +1,6 @@
 package de.hirnmoritz.main.commandmanager;
 
+import de.hirnmoritz.main.messages.I18nUtil;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
@@ -32,7 +33,7 @@ public class CommandManager implements CommandExecutor {
 		if(sender instanceof Player) {
 			final Player player = (Player)sender;
 			
-			if(command.getName().equalsIgnoreCase("land") || command.getName().equalsIgnoreCase("l")) {
+			if(command.getName().equalsIgnoreCase("land")) {
 				
 				if(args.length == 1) {
 					if(args[0].equalsIgnoreCase("reload")) {
@@ -123,7 +124,7 @@ public class CommandManager implements CommandExecutor {
 						}
 							
 						else {
-							new PrefixWriter().write("§cCommand not found, try §6/land help").send(player);
+							new PrefixWriter().write(I18nUtil.getLocalizedMessage("cmd-not-found")).send(player);
 							return false;
 						}
 				
@@ -173,26 +174,24 @@ public class CommandManager implements CommandExecutor {
 						}	
 						
 						else {
-							new PrefixWriter().write("§cCommand not found, try §6/land help").send(player);
+							new PrefixWriter().write(I18nUtil.getLocalizedMessage("cmd-not-found")).send(player);
 							return false;
 						}
 						
 						}else {
-							new PrefixWriter().write("§cCommand not found, try §6/land help").send(player);
+							new PrefixWriter().write(I18nUtil.getLocalizedMessage("cmd-not-found")).send(player);
 							return false;
 						}
 				
 					}else {
-						new PrefixWriter().write("§cLand is not enabled in this world!").send(player);
+						new PrefixWriter().write(I18nUtil.getLocalizedMessage("land-disabled")).send(player);
 						return false;
 					}
 				
 				}
 					
 			}else {
-				System.out.println("=================================");
-				System.out.println("You have to be a player to do that!");
-				System.out.println("=================================");
+				System.out.println(I18nUtil.getLocalizedMessage("player-only"));
 			}
 		
 		return false;

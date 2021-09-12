@@ -1,5 +1,6 @@
 package de.hirnmoritz.main.commandmanager.commands;
 
+import de.hirnmoritz.main.messages.I18nUtil;
 import org.bukkit.Material;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
@@ -33,7 +34,7 @@ public class Command_Land_SetBorderMaterial implements Listener {
 					if(args.length == 2) {
 						new PrefixWriter().write("§8"+Chat.LINE.getIndex()).send(player);
 						final Material[] material = BorderMaterial.types.toArray(new Material[BorderMaterial.types.size()]);
-						new PrefixWriter().write("§3A list of materials is listed below:").send(player);
+						new PrefixWriter().write(I18nUtil.getLocalizedMessage("material-list")).send(player);
 						new PrefixWriter().write(Chat.PLACEHOLDER.getIndex()).send(player);
 						
 						for(int i=0; i<material.length; i++) {
@@ -53,26 +54,26 @@ public class Command_Land_SetBorderMaterial implements Listener {
 								land.createBorder(PluginSettings.border_type, material, player.getLocation().getChunk(), land.getBorderHeight());
 								land.save();
 								
-								new PrefixWriter().write("§aSuccessfully changed border material!").send(player);
+								new PrefixWriter().write(I18nUtil.getLocalizedMessage("set-material-success")).send(player);
 							
 							}else {
-								new PrefixWriter().write("§cLand border is disabled").send(player);
+								new PrefixWriter().write(I18nUtil.getLocalizedMessage("border-disabled")).send(player);
 							}
 								
 						}else {
-							new PrefixWriter().write("§cMaterial doesn't exist!").send(player);
+							new PrefixWriter().write(I18nUtil.getLocalizedMessage("material-not-found")).send(player);
 						}
 						
 					}else {
-						new PrefixWriter().write("§cCommand not found, try §6/land setBorderMaterial <material>").send(player);
+						new PrefixWriter().write(I18nUtil.getLocalizedMessage("cmd-not-found")).send(player);
 					}
 				
 				}else {
-					new PrefixWriter().write("§cYou are not the §6Owner§c of this land!").send(player);
+					new PrefixWriter().write(I18nUtil.getLocalizedMessage("not-owner")).send(player);
 				}
 			
 			}else {
-				new PrefixWriter().write("§cThat is not your land!").send(player);
+				new PrefixWriter().write(I18nUtil.getLocalizedMessage("land-not-claimed")).send(player);
 			}
 			
 		}

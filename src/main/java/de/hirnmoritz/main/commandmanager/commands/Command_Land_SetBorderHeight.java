@@ -1,5 +1,6 @@
 package de.hirnmoritz.main.commandmanager.commands;
 
+import de.hirnmoritz.main.messages.I18nUtil;
 import org.bukkit.Material;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
@@ -36,7 +37,7 @@ public class Command_Land_SetBorderHeight implements Listener {
 								height = Integer.parseInt(args[2]);
 								
 							} catch (Exception e) {
-								new PrefixWriter().write("§cHeight must be an Integer").send(player);
+								new PrefixWriter().write(I18nUtil.getLocalizedMessage("not-integer")).send(player);
 								return;
 							}
 							
@@ -47,7 +48,7 @@ public class Command_Land_SetBorderHeight implements Listener {
 									int oldHeight = land.getBorderHeight();
 									land.setBorderHeight(height);
 									
-									new PrefixWriter().write("§aSuccessfully changed lands border height!").send(player);
+									new PrefixWriter().write(I18nUtil.getLocalizedMessage("set-height-success")).send(player);
 									
 									land.createBorder(BorderType.WALL, Material.AIR, player.getLocation().getChunk(), oldHeight);
 									land.createBorder(PluginSettings.border_type, PluginSettings.border_material, player.getLocation().getChunk(), height);
@@ -55,27 +56,27 @@ public class Command_Land_SetBorderHeight implements Listener {
 									land.save();
 							
 								}else {
-									new PrefixWriter().write("§cLand border is disabled!").send(player);
+									new PrefixWriter().write(I18nUtil.getLocalizedMessage("border-disabled")).send(player);
 								}
 								
 							}else {
-								new PrefixWriter().write("§cHeight must be less than 240!!").send(player);
+								new PrefixWriter().write(I18nUtil.getLocalizedMessage("height-out-of-range")).send(player);
 							}
 							
 						}else {
-							new PrefixWriter().write("§cEnter border height fist!").send(player);
+							new PrefixWriter().write(I18nUtil.getLocalizedMessage("cmd-not-found")).send(player);
 						}					
 						
 					}else {
-						new PrefixWriter().write("§cCommand not found, try §6/land setBorderHeight <height>").send(player);
+						new PrefixWriter().write(I18nUtil.getLocalizedMessage("cmd-not-found")).send(player);
 					}
 					
 				}else {
-					new PrefixWriter().write("§cYou are not the §6Owner §cof this land!").send(player);
+					new PrefixWriter().write(I18nUtil.getLocalizedMessage("not-owner")).send(player);
 				}
 		
 			}else {
-				new PrefixWriter().write("§cThat is not your land!").send(player);
+				new PrefixWriter().write(I18nUtil.getLocalizedMessage("land-not-claimed")).send(player);
 			}
 			
 		}

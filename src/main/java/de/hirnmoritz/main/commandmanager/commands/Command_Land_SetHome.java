@@ -1,5 +1,6 @@
 package de.hirnmoritz.main.commandmanager.commands;
 
+import de.hirnmoritz.main.messages.I18nUtil;
 import org.bukkit.Location;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
@@ -29,14 +30,14 @@ public class Command_Land_SetHome implements Listener {
 					land.setMiddle(new Location(player.getWorld(), player.getLocation().getBlockX(), player.getLocation().getBlockY(), player.getLocation().getBlockZ()));
 					land.save();
 					
-					new PrefixWriter().write("§aChanged lands home to your current location!").send(player);
+					new PrefixWriter().write(I18nUtil.getLocalizedMessage("sethome-success")).send(player);
 					
 				}else {
-					new PrefixWriter().write("§cYou are not the §6Owner§cof this land!").send(player);
+					new PrefixWriter().write(I18nUtil.getLocalizedMessage("not-owner")).send(player);
 				}
 				
 			}else {
-				new PrefixWriter().write("§cLand is still not claimed!").send(player);
+				new PrefixWriter().write(I18nUtil.getLocalizedMessage("land-not-claimed")).send(player);
 			}
 			
 		}

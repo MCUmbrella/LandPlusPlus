@@ -1,5 +1,6 @@
 package de.hirnmoritz.main.commandmanager.commands;
 
+import de.hirnmoritz.main.messages.I18nUtil;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
@@ -24,10 +25,10 @@ public class Command_Land_Middle implements Listener {
 				final Land land = manager.getLand();
 				player.teleport(ChunkLocation.getMiddle(player.getLocation().getChunk(), land.getMiddle().getBlockY()));
 				
-				new PrefixWriter().write("§aYou have been teleportet to the middle!").send(player);
+				new PrefixWriter().write(I18nUtil.getLocalizedMessage("tpmiddle-success")).send(player);
 				
 			}else {
-				new PrefixWriter().write("§cLand is still not claimed!").send(player);
+				new PrefixWriter().write(I18nUtil.getLocalizedMessage("land-not-claimed")).send(player);
 			}
 		
 		}

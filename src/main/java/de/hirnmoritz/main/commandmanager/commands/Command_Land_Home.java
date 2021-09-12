@@ -1,5 +1,6 @@
 package de.hirnmoritz.main.commandmanager.commands;
 
+import de.hirnmoritz.main.messages.I18nUtil;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
@@ -24,18 +25,18 @@ public class Command_Land_Home implements Listener {
 					final Land l= manager.getLand();
 						
 					l.teleport(player);
-					new PrefixWriter().write("§aYou have been teleportet home!").send(player);
+					new PrefixWriter().write(I18nUtil.getLocalizedMessage("tphome-success")).send(player);
 	
 					}else {
-						new PrefixWriter().write("§cThis land does not exists!").send(player);
+						new PrefixWriter().write(I18nUtil.getLocalizedMessage("land-not-found")).send(player);
 					}
 				
 				}else {
-					new PrefixWriter().write("§cThat land does not exists!").send(player);
+					new PrefixWriter().write(I18nUtil.getLocalizedMessage("land-not-found")).send(player);
 				}
 				
 			}else {
-				new PrefixWriter().write("§cCommand not found, try §6/land home <name>").send(player);
+				new PrefixWriter().write(I18nUtil.getLocalizedMessage("cmd-not-found")).send(player);
 			}
 	
 		}

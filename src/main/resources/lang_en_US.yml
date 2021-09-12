@@ -1,6 +1,6 @@
 language: "English(US)"
 
-##### On world interaction #####
+    ##### On world interaction #####
 cant-break: "§cYou can't break blocks on this land!"
 cant-break-border: "§cYou can't break the border!"
 cant-build: "§cYou can't build blocks on this land!"
@@ -12,13 +12,85 @@ cant-use-furnace: "§cYou can't use furnaces on this land!"
 cant-pvp: "§cPvP is not allowed on this land!"
 cant-tnt: "§cTnT is not allowed on this land!"
 
-##### Land GUI: Titles #####
+    ##### Land commands #####
+plugin-reloaded: "§aPlugin successfully reloaded!"
+no-permission: "§cYou don't have enough permissions to do that!"
+player-only: "=================================\nYou have to be a player to do that!\n================================="
+land-disabled: "§cLand is not enabled in this world!"
+cmd-not-found: "§cCommand not found, try §6/land help"
+gui-not-available: "§cGui is not available in this minecraft version, do:       §6/land help §cto open a list with commnads!"
+player-not-online: "§cPlayer not online!"
+player-not-found: "§cPlayer not found!"
+invalid-player-name: "§cEnter an available name first!"
+not-owner: "§cYou are not the §6Owner §cof this land!"
+not-on-land: "§cYou are not on your land!"
+land-not-found: "§cThis land does not exists!"
+land-not-claimed: "§cLand is still not claimed!"
+border-disabled: "§cLand border is disabled!"
+# /land add
+addmember-success: "§aSuccessfully added: §6{NAME} §ato your land!"
+# /land claim
+name-taken: "§cThis name is already used, try an other!"
+already-claimed: "§cThis land is already claimed!"
+max-amount-reached: "§cYou have already claimed the max amount of lands!"
+not-on-ground: "§cGo on ground first!"
+claim-success: "§aYou have successfully claimed this land!"
+# /land delete
+delete-success: "§aYour land has been deleted!"
+# /land home
+tphome-success: "§aYou have been teleportet home!"
+# /land kick
+kickmember-success: "§aSuccessfully removed: §6{NAME} §afrom your land!"
+# /land list
+list-title: "§3Your lands:"
+# /land middle
+tpmiddle-success: "§aYou have been teleported to the middle!"
+# /land setBorderHeight
+not-integer: "§cHeight must be an Integer"
+height-out-of-range: "§cHeight must be less than 240!!"
+set-height-success: "§aSuccessfully changed lands border height!"
+# /land setBorderMaterial
+material-list: "§3A list of materials is listed below:"
+material-not-found: "§cMaterial doesn't exist!"
+set-material-success: "§aSuccessfully changed border material!"
+# /land setHome
+sethome-success: "§aChanged lands home to your current location!"
+# /land settings
+setting-not-found: "§cSetting §6{NAME} §cnot found!"
+settings-usage: "§cType: §6/land settings <setting> §ato enable/disable it."
+settings-list: "§aA list of setting is listed below!"
+settings: "§3Settings:"
+allowBreak-disabled: "§cBlocks can't be destroyed by players"
+allowBreak-enabled: "§aBlocks can be destroyed by players"
+allowBuild-disabled: "§cBlocks can't be placed by players!"
+allowBuild-enabled: "§aBlocks can be placed by players!"
+allowTnT-disabled: "§cTNT can't be used by players!"
+allowTnT-enabled: "§aTNT can be used by players!"
+allowPvP-disabled: "§cPVP can't be done by players!"
+allowPvP-enabled: "§aPVP can be done by players!"
+allowInteractEntity-disabled: "§cEntities can't be clicked by players!"
+allowInteractEntity-enabled: "§aEntities can be clicked by players!"
+allowUseButton-disabled: "§cButtons can't be used by players!"
+allowUseButton-enabled: "§aButtons can be used by players!"
+allowUseChest-disabled: "§cChests can't be used by players!"
+allowUseChest-enabled: "§aChests can be used by players!"
+allowUseTrappedChest-disabled: "§cTrapped chests can't be used by players!"
+allowUseTrappedChest-enabled: "§aTrapped chests can be used by players!"
+allowUseDoor-disabled: "§cDoors can't be used by players!"
+allowUseDoor-enabled: "§aDoors can be used by players!"
+allowUseFurnace-disabled: "§cFurnaces can't be used by players!"
+allowUseFurnace-enabled: "§aFurnaces can be used by players!"
+# /land visit
+enter-name-first: "§cEnter name fist!"
+visit-success: "§aYou haven been teleported!"
+
+    ##### Land GUI: Titles #####
 guiTitle-main: " §3Menu"
 guiTitle-border: " §3Border §2Material"
 guiTitle-lands: " §3Lands"
 guiTitle-settings: " §3Settings"
 
-##### Land GUI: Main Menu #####
+    ##### Land GUI: Main Menu #####
 gui-help: "§a§lHelp"
 gui-help-lore: "§6to get help"
 gui-info: "§a§lInformation"
@@ -36,7 +108,7 @@ gui-settings-lore: "§6to open the settings"
 gui-exit: "§c§lExit"
 gui-exit-lore: "§6exit"
 
-##### Land GUI: Border Materials #####
+    ##### Land GUI: Border Materials #####
 guiBorder-sandstone: "§6Sandstone"
 guiBorder-sandstone-lore: "§aChange to: §6Sandstone"
 guiBorder-stone: "§6Stone"
@@ -56,7 +128,7 @@ guiBorder-glass-lore: "§aChange to: §6Glass"
 guiBorder-slime: "§6Slime"
 guiBorder-slime-lore: "§aChange to: §6Slime"
 
-##### Land GUI: Land list #####
+    ##### Land GUI: Land list #####
 guiLands-slot-empty: "§aDo §6/land claim <name>!"
 guiLands-slot1: "§a{NAME}"
 guiLands-slot1-lore: "§aClick to teleport!"
@@ -69,7 +141,7 @@ guiLands-slot4-lore: "§aClick to teleport!"
 guiLands-slot5: "§a{NAME}"
 guiLands-slot5-lore: "§aClick to teleport!"
 
-##### Land GUI: Land Settings #####
+    ##### Land GUI: Land Settings #####
 guiSettings-pvp: "§a§lPVP"
 guiSettings-pvp-lore: "§6Allow/Forbid PVP"
 guiSettings-tnt: "§a§lTNT"

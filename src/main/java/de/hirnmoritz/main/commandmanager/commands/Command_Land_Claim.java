@@ -1,5 +1,6 @@
 package de.hirnmoritz.main.commandmanager.commands;
 
+import de.hirnmoritz.main.messages.I18nUtil;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
@@ -23,7 +24,7 @@ public class Command_Land_Claim implements Listener{
 			
 			final String[] args = event.getMessage().split(" ");
 			if(args.length == 3) {
-				if(LandTranslator.available(args[2]) == true) {
+				if(LandTranslator.available(args[2])) {
 					if(!manager.isClaimed()) {
 						if(LandManager.getLands(player) < PluginSettings.max_claims) {
 							if(player.isOnGround()) {
@@ -36,26 +37,26 @@ public class Command_Land_Claim implements Listener{
 								
 								l.save();
 							
-								new PrefixWriter().write("§aYou have successfully claimed this land!").send(player);
+								new PrefixWriter().write(I18nUtil.getLocalizedMessage("claim-success")).send(player);
 								
 							}else {
-								new PrefixWriter().write("§cGo on ground first!").send(player);
+								new PrefixWriter().write(I18nUtil.getLocalizedMessage("not-on-ground")).send(player);
 							}
 							
 						}else {
-							new PrefixWriter().write("§cYou have already claimed the max amount of lands!").send(player);
+							new PrefixWriter().write(I18nUtil.getLocalizedMessage("max-amount-reached")).send(player);
 						}
 						
 					}else {
-						new PrefixWriter().write("§cThis land is already claimed!").send(player);
+						new PrefixWriter().write(I18nUtil.getLocalizedMessage("already-claimed")).send(player);
 					}
 				
 				}else {
-					new PrefixWriter().write("§cThis name is already used, try an other!").send(player);
+					new PrefixWriter().write(I18nUtil.getLocalizedMessage("name-taken")).send(player);
 				}
 			
 			}else {
-				new PrefixWriter().write("§cCommand not found, try §6/land claim <name> §cto claim a land!").send(player);
+				new PrefixWriter().write(I18nUtil.getLocalizedMessage("cmd-not-found")).send(player);
 			}
 		
 		}

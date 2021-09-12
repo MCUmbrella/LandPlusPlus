@@ -1,5 +1,6 @@
 package de.hirnmoritz.main.commandmanager.commands;
 
+import de.hirnmoritz.main.messages.I18nUtil;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
@@ -26,18 +27,18 @@ public class Command_Land_Visit implements Listener {
 						land.load();
 						land.teleport(player);
 						
-						new PrefixWriter().write("§aYou haven been teleportet!").send(player);
+						new PrefixWriter().write(I18nUtil.getLocalizedMessage("visit-success")).send(player);
 				
 					}else {
-						new PrefixWriter().write("§cLand not found!").send(player);
+						new PrefixWriter().write(I18nUtil.getLocalizedMessage("land-not-found")).send(player);
 					}
 				
 				}else {
-					new PrefixWriter().write("§cEnter name fist!").send(player);
+					new PrefixWriter().write(I18nUtil.getLocalizedMessage("enter-name-first")).send(player);
 				}
 				
 			}else {
-				new PrefixWriter().write("§cCommand not found, try §6/land visit <name>").send(player);
+				new PrefixWriter().write(I18nUtil.getLocalizedMessage("cmd-not-found")).send(player);
 			}
 			
 		

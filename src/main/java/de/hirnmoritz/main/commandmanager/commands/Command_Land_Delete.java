@@ -2,6 +2,7 @@ package de.hirnmoritz.main.commandmanager.commands;
 
 import java.util.ArrayList;
 
+import de.hirnmoritz.main.messages.I18nUtil;
 import org.bukkit.Material;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
@@ -21,7 +22,7 @@ public class Command_Land_Delete implements Listener {
 	public void onCommand(PlayerCommandPreprocessEvent event) {
 		final Player player = event.getPlayer();
 		
-		if(event.getMessage().equalsIgnoreCase("/land delete") || event.getMessage().equalsIgnoreCase("/l delete")) {
+		if(event.getMessage().equalsIgnoreCase("/land delete")) {
 			
 			final LandManager manager = new LandManager(new LandID(player.getLocation().getChunk()));
 			
@@ -43,14 +44,14 @@ public class Command_Land_Delete implements Listener {
 					
 					l.delete();
 					
-					new PrefixWriter().write("§aYour land has been deleted!").send(player);
+					new PrefixWriter().write(I18nUtil.getLocalizedMessage("delete-success")).send(player);
 					
 				}else {
-					new PrefixWriter().write("§cYou are not the §6Owner §c of this land!").send(player);
+					new PrefixWriter().write(I18nUtil.getLocalizedMessage("not-owner")).send(player);
 				}
 								
 			}else {
-				new PrefixWriter().write("§cYou are not on a land!").send(player);
+				new PrefixWriter().write(I18nUtil.getLocalizedMessage("not-on-land")).send(player);
 			}
 			
 		}

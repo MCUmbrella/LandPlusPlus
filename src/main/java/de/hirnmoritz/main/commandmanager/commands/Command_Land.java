@@ -1,5 +1,6 @@
 package de.hirnmoritz.main.commandmanager.commands;
 
+import de.hirnmoritz.main.messages.I18nUtil;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
@@ -18,21 +19,21 @@ public class Command_Land implements Listener{
 	public void onCommand(PlayerCommandPreprocessEvent event) {
 		final Player player = event.getPlayer();
 		
-		if(event.getMessage().equalsIgnoreCase("/land") || event.getMessage().equalsIgnoreCase("/l")) {
+		if(event.getMessage().equalsIgnoreCase("/land")) {
 			
 			if(PluginSettings.gui) {
 				if(Server.getVersion() > 1130) {
 				
-					final Page p = new Page_Menu(PluginSettings.prefix+" §3Menu", 5*9);					
+					final Page p = new Page_Menu(PluginSettings.prefix+I18nUtil.getLocalizedMessage("guiTitle-main"), 5*9);
 					final Gui gui = new Gui(p);
 					gui.send(player);
 					
 					}else {
-						new PrefixWriter().write("§cGui is not available in this minecraft version, do:       §6/land help §cto open a list with commnads!").send(player);
+						new PrefixWriter().write(I18nUtil.getLocalizedMessage("gui-not-available")).send(player);
 					}
 					
 				}else {
-					new PrefixWriter().write("§cGui is not enabled on this server, do §6/land help §cto get a list with commands!").send(player);
+					new PrefixWriter().write(I18nUtil.getLocalizedMessage("gui-not-available")).send(player);
 				}
 				
 			}						
