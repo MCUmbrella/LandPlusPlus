@@ -1,5 +1,6 @@
 package de.hirnmoritz.main.gui.pages;
 
+import de.hirnmoritz.main.messages.I18nUtil;
 import org.bukkit.Material;
 import org.bukkit.enchantments.Enchantment;
 
@@ -16,17 +17,17 @@ public class Page_LandSettings extends Page{
 			setItem(i, new Item(Material.GRAY_STAINED_GLASS_PANE).setName(Chat.PLACEHOLDER.getIndex()));
 		}
 		
-		setItem(40, new Item(Material.ARROW).setName("§c§lExit").setLore("§6Exit"));
-		setItem(12, new Item(Material.DIAMOND_SWORD).setName("§a§lPVP").setLore("§6Allow/Forbid PVP").setEnchantment(Enchantment.ARROW_DAMAGE, 50));
-		setItem(14, new Item(Material.TNT).setName("§a§lTnT").setLore("§6Allow/Forbid TnT").setEnchantment(Enchantment.ARROW_DAMAGE, 50));
-		setItem(24, new Item(Material.IRON_PICKAXE).setName("§a§lBreak").setLore("§6Allow/Forbid players to break blocks on your land").setEnchantment(Enchantment.ARROW_DAMAGE, 50));
-		setItem(20, new Item(Material.BRICK).setName("§a§lBuild").setLore("§6Allow/Forbid players to build on your land").setEnchantment(Enchantment.ARROW_DAMAGE, 50));
-		setItem(32, new Item(Material.CREEPER_HEAD).setName("§a§lInteract with Mobs").setLore("§6Allow/Forbid players to interact with mobs").setEnchantment(Enchantment.ARROW_DAMAGE, 50));
-		setItem(30, new Item(Material.CHEST).setName("§a§lUse Chests").setLore("§6Allow/Forbid players to use chests").setEnchantment(Enchantment.ARROW_DAMAGE, 50));
-		setItem(10, new Item(Material.OAK_DOOR).setName("§a§lUse Doors").setLore("§6Allow/Forbid players to use doors").setEnchantment(Enchantment.ARROW_DAMAGE, 50));
-		setItem(28, new Item(Material.TRAPPED_CHEST).setName("§a§lUse TrappedChests").setLore("§6Allow/Forbid players to use redstone chests").setEnchantment(Enchantment.ARROW_DAMAGE, 50));
-		setItem(16, new Item(Material.STONE_BUTTON).setName("§a§lUse Buttons").setLore("§6Allow/Forbid players to use buttons").setEnchantment(Enchantment.ARROW_DAMAGE, 50));
-		setItem(34, new Item(Material.FURNACE).setName("§a§lUse Furnace").setLore("§6Allow/Forbid players to use furnaces").setEnchantment(Enchantment.ARROW_DAMAGE, 50));
+		setItem(40, new Item(Material.ARROW).setName(I18nUtil.getLocalizedMessage("gui-exit")).setLore(I18nUtil.getLocalizedMessage("gui-exit-lore")));
+		setItem(12, new Item(Material.DIAMOND_SWORD).setName(I18nUtil.getLocalizedMessage("guiSettings-pvp")).setLore(I18nUtil.getLocalizedMessage("guiSettings-pvp-lore")).setEnchantment(Enchantment.ARROW_DAMAGE, 1));
+		setItem(14, new Item(Material.TNT).setName(I18nUtil.getLocalizedMessage("guiSettings-tnt")).setLore(I18nUtil.getLocalizedMessage("guiSettings-tnt-lore")).setEnchantment(Enchantment.ARROW_DAMAGE, 1));
+		setItem(24, new Item(Material.IRON_PICKAXE).setName(I18nUtil.getLocalizedMessage("guiSettings-break")).setLore(I18nUtil.getLocalizedMessage("guiSettings-break-lore")).setEnchantment(Enchantment.ARROW_DAMAGE, 1));
+		setItem(20, new Item(Material.BRICK).setName(I18nUtil.getLocalizedMessage("guiSettings-build")).setLore(I18nUtil.getLocalizedMessage("guiSettings-build-lore")).setEnchantment(Enchantment.ARROW_DAMAGE, 1));
+		setItem(32, new Item(Material.CREEPER_HEAD).setName(I18nUtil.getLocalizedMessage("guiSettings-interact")).setLore(I18nUtil.getLocalizedMessage("guiSettings-interact-lore")).setEnchantment(Enchantment.ARROW_DAMAGE, 1));
+		setItem(30, new Item(Material.CHEST).setName(I18nUtil.getLocalizedMessage("guiSettings-chest")).setLore(I18nUtil.getLocalizedMessage("guiSettings-chest-lore")).setEnchantment(Enchantment.ARROW_DAMAGE, 1));
+		setItem(10, new Item(Material.OAK_DOOR).setName(I18nUtil.getLocalizedMessage("guiSettings-door")).setLore(I18nUtil.getLocalizedMessage("guiSettings-door-lore")).setEnchantment(Enchantment.ARROW_DAMAGE, 1));
+		setItem(28, new Item(Material.TRAPPED_CHEST).setName(I18nUtil.getLocalizedMessage("guiSettings-trapchest")).setLore(I18nUtil.getLocalizedMessage("guiSettings-trapchest-lore")).setEnchantment(Enchantment.ARROW_DAMAGE, 1));
+		setItem(16, new Item(Material.STONE_BUTTON).setName(I18nUtil.getLocalizedMessage("guiSettings-button")).setLore(I18nUtil.getLocalizedMessage("guiSettings-button-lore")).setEnchantment(Enchantment.ARROW_DAMAGE, 1));
+		setItem(34, new Item(Material.FURNACE).setName(I18nUtil.getLocalizedMessage("guiSettings-furnace")).setLore(I18nUtil.getLocalizedMessage("guiSettings-furnace-lore")).setEnchantment(Enchantment.ARROW_DAMAGE, 1));
 		
 		
 		return;

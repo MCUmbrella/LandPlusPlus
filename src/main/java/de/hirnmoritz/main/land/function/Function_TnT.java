@@ -1,5 +1,6 @@
 package de.hirnmoritz.main.land.function;
 
+import de.hirnmoritz.main.messages.I18nUtil;
 import org.bukkit.Material;
 import org.bukkit.entity.Entity;
 import org.bukkit.entity.Player;
@@ -56,7 +57,7 @@ public class Function_TnT implements Listener {
 						event.setCancelled(false);
 					}else {
 						event.setCancelled(true);
-						new PrefixWriter().write("§cTnT is not allowed on this land!").send(player);
+						new PrefixWriter().write(I18nUtil.getLocalizedMessage("cant-tnt")).send(player);
 					}
 					
 				}

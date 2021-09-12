@@ -1,5 +1,6 @@
 package de.hirnmoritz.main.land.function;
 
+import de.hirnmoritz.main.messages.I18nUtil;
 import org.bukkit.Material;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
@@ -31,7 +32,7 @@ public class Function_InteractUse implements Listener {
 					event.setCancelled(false);
 				}else {
 					event.setCancelled(true);
-					new PrefixWriter().write("§cYou can't use doors on this land!").send(player);
+					new PrefixWriter().write(I18nUtil.getLocalizedMessage("cant-use-door")).send(player);
 				}
 			}
 			
@@ -40,7 +41,7 @@ public class Function_InteractUse implements Listener {
 					event.setCancelled(false);
 				}else {
 					event.setCancelled(true);
-					new PrefixWriter().write("§cYou can't use buttons on this land!").send(player);
+					new PrefixWriter().write(I18nUtil.getLocalizedMessage("cant-use-button")).send(player);
 				}
 			}
 			
@@ -49,7 +50,7 @@ public class Function_InteractUse implements Listener {
 					event.setCancelled(false);
 				}else {
 					event.setCancelled(true);
-					new PrefixWriter().write("§cYou can't use trapped chests on this land!").send(player);
+					new PrefixWriter().write(I18nUtil.getLocalizedMessage("cant-use-trapchest")).send(player);
 				}
 			}
 			
@@ -58,7 +59,7 @@ public class Function_InteractUse implements Listener {
 					event.setCancelled(false);
 				}else {
 					event.setCancelled(true);
-					new PrefixWriter().write("§cYou can't use chests on this land!").send(player);
+					new PrefixWriter().write(I18nUtil.getLocalizedMessage("cant-use-chest")).send(player);
 				}
 			}
 			
@@ -67,7 +68,7 @@ public class Function_InteractUse implements Listener {
 					event.setCancelled(false);
 				}else {
 					event.setCancelled(true);
-					new PrefixWriter().write("§cYou can't use furnaces on this land!").send(player);
+					new PrefixWriter().write(I18nUtil.getLocalizedMessage("cant-use-furnace")).send(player);
 				}
 			}
 		

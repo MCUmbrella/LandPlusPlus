@@ -2,6 +2,7 @@ package de.hirnmoritz.main.land.function.border;
 
 import java.util.ArrayList;
 
+import de.hirnmoritz.main.messages.I18nUtil;
 import org.bukkit.Location;
 import org.bukkit.block.Block;
 import org.bukkit.entity.Player;
@@ -35,7 +36,7 @@ public class BorderProtection_Break implements Listener {
 							if(block.getY() != land.getBorderHeight()) {
 								event.setCancelled(false);
 							}else {
-								new PrefixWriter().write("§cYou can't break the border!").send(player);
+								new PrefixWriter().write(I18nUtil.getLocalizedMessage("cant-break-border")).send(player);
 								event.setCancelled(true);
 							}
 							

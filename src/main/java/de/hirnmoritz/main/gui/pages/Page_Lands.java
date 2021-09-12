@@ -2,6 +2,7 @@ package de.hirnmoritz.main.gui.pages;
 
 import java.util.ArrayList;
 
+import de.hirnmoritz.main.messages.I18nUtil;
 import org.bukkit.Material;
 import org.bukkit.entity.Player;
 
@@ -33,22 +34,22 @@ public class Page_Lands extends Page {
 		setItem(25, new Item(Material.AIR));
 		setItem(19, new Item(Material.AIR));
 		
-		setItem(40, new Item(Material.ARROW).setName("§c§lExit").setLore("§6exit"));
+		setItem(40, new Item(Material.ARROW).setName(I18nUtil.getLocalizedMessage("gui-exit")).setLore(I18nUtil.getLocalizedMessage("gui-exit-lore")));
 		
 		final ArrayList<String> lands = LandManager.getLandNames(player);
 		final String[] names = lands.toArray(new String[5]);
 		
 		for(int i=0; i<names.length; i++) {
 			if(names[i] == null) {
-				names[i] = "§aDo §6/land claim <name>!";
+				names[i] = I18nUtil.getLocalizedMessage("guiLands-slot-empty");
 			}
 		}
 		
-		setItem(20, new Item(Material.GRASS_BLOCK).setName("§a"+names[0]).setLore("§aClick to teleport!"));
-		setItem(21, new Item(Material.GRASS_BLOCK).setName("§a"+names[1]).setLore("§aClick to teleport!"));
-		setItem(22, new Item(Material.GRASS_BLOCK).setName("§a"+names[2]).setLore("§aClick to teleport!"));
-		setItem(23, new Item(Material.GRASS_BLOCK).setName("§a"+names[3]).setLore("§aClick to teleport!"));
-		setItem(24, new Item(Material.GRASS_BLOCK).setName("§a"+names[4]).setLore("§aClick to teleport!"));
+		setItem(20, new Item(Material.GRASS_BLOCK).setName(I18nUtil.getLocalizedMessage("guiLands-slot1").replace("{NAME}",names[0])).setLore(I18nUtil.getLocalizedMessage("guiLands-slot1-lore")));
+		setItem(21, new Item(Material.GRASS_BLOCK).setName(I18nUtil.getLocalizedMessage("guiLands-slot2").replace("{NAME}",names[1])).setLore(I18nUtil.getLocalizedMessage("guiLands-slot2-lore")));
+		setItem(22, new Item(Material.GRASS_BLOCK).setName(I18nUtil.getLocalizedMessage("guiLands-slot3").replace("{NAME}",names[2])).setLore(I18nUtil.getLocalizedMessage("guiLands-slot3-lore")));
+		setItem(23, new Item(Material.GRASS_BLOCK).setName(I18nUtil.getLocalizedMessage("guiLands-slot4").replace("{NAME}",names[3])).setLore(I18nUtil.getLocalizedMessage("guiLands-slot4-lore")));
+		setItem(24, new Item(Material.GRASS_BLOCK).setName(I18nUtil.getLocalizedMessage("guiLands-slot5").replace("{NAME}",names[4])).setLore(I18nUtil.getLocalizedMessage("guiLands-slot5-lore")));
 		
 		return;
 	}

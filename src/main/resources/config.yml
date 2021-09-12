@@ -1,6 +1,6 @@
 ## set your prefix ##
 prefix: "&3&lLand &f>>"
-## plugin language
+## plugin language. Available: "en_US", "zh_CN"
 language: "en_US"
 ## land settings ##
 land-allow-in-worlds:

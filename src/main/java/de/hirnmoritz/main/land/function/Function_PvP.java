@@ -1,5 +1,6 @@
 package de.hirnmoritz.main.land.function;
 
+import de.hirnmoritz.main.messages.I18nUtil;
 import org.bukkit.entity.Entity;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
@@ -24,7 +25,7 @@ public class Function_PvP implements Listener {
 			if(manager.isClaimed()) {
 				if(!(land.getSettings().isAllowPvP())) {
 					event.setCancelled(true);
-					new PrefixWriter().write("§cPvP is not allowed on this land!").send((Player)damager);
+					new PrefixWriter().write(I18nUtil.getLocalizedMessage("cant-pvp")).send((Player)damager);
 				}else {
 					event.setCancelled(false);
 				}

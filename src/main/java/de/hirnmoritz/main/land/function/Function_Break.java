@@ -1,5 +1,6 @@
 package de.hirnmoritz.main.land.function;
 
+import de.hirnmoritz.main.messages.I18nUtil;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
@@ -24,7 +25,7 @@ public class Function_Break implements Listener{
 				event.setCancelled(false);
 			}else {
 				event.setCancelled(true);
-				new PrefixWriter().write("§cYou can't break blocks on this land!").send(player);
+				new PrefixWriter().write(I18nUtil.getLocalizedMessage("cant-break")).send(player);
 			}
 		}
 		

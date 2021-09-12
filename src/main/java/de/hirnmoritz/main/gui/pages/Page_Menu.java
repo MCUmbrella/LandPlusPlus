@@ -1,5 +1,6 @@
 package de.hirnmoritz.main.gui.pages;
 
+import de.hirnmoritz.main.messages.I18nUtil;
 import org.bukkit.Material;
 import org.bukkit.enchantments.Enchantment;
 
@@ -16,14 +17,14 @@ public class Page_Menu extends Page {
 			setItem(i, new Item(Material.GRAY_STAINED_GLASS_PANE).setName(Chat.PLACEHOLDER.getIndex()));
 		}
 		
-		setItem(10, new Item(Material.REDSTONE_TORCH).setName("§a§lHelp").setLore("§6to get help").setEnchantment(Enchantment.ARROW_DAMAGE, 100));
-		setItem(28, new Item(Material.NAME_TAG).setName("§a§lInformation").setLore("§6to get information about the current land").setEnchantment(Enchantment.ARROW_DAMAGE, 100));
-		setItem(16, new Item(Material.LIME_DYE).setName("§a§lAdd").setLore("§6to add a member").setEnchantment(Enchantment.ARROW_DAMAGE, 100));
-		setItem(34, new Item(Material.PINK_DYE).setName("§a§lKick").setLore("§6to kick a member").setEnchantment(Enchantment.ARROW_DAMAGE, 100));
-		setItem(22, new Item(Material.NETHER_STAR).setName("§a§lLands").setLore("§6to go, on once of your lands"));
-		setItem(21, new Item(Material.COBBLESTONE_WALL).setName("§a§lBorder Material").setLore("§6to change borders material"));
-		setItem(23, new Item(Material.COMPARATOR).setName("§a§lSettings").setLore("§6to open the settings"));
-		setItem(40, new Item(Material.ARROW).setName("§c§lExit").setLore("§6exit"));
+		setItem(10, new Item(Material.REDSTONE_TORCH).setName(I18nUtil.getLocalizedMessage("gui-help")).setLore(I18nUtil.getLocalizedMessage("gui-help-lore")).setEnchantment(Enchantment.ARROW_DAMAGE, 1));
+		setItem(28, new Item(Material.NAME_TAG).setName(I18nUtil.getLocalizedMessage("gui-info")).setLore(I18nUtil.getLocalizedMessage("gui-info-lore")).setEnchantment(Enchantment.ARROW_DAMAGE, 1));
+		setItem(16, new Item(Material.LIME_DYE).setName(I18nUtil.getLocalizedMessage("gui-addmember")).setLore(I18nUtil.getLocalizedMessage("gui-addmember-lore")).setEnchantment(Enchantment.ARROW_DAMAGE, 1));
+		setItem(34, new Item(Material.PINK_DYE).setName(I18nUtil.getLocalizedMessage("gui-kickmember")).setLore(I18nUtil.getLocalizedMessage("gui-kickmember-lore")).setEnchantment(Enchantment.ARROW_DAMAGE, 1));
+		setItem(22, new Item(Material.NETHER_STAR).setName(I18nUtil.getLocalizedMessage("gui-lands")).setLore(I18nUtil.getLocalizedMessage("gui-lands-lore")));
+		setItem(21, new Item(Material.COBBLESTONE_WALL).setName(I18nUtil.getLocalizedMessage("gui-border")).setLore(I18nUtil.getLocalizedMessage("gui-border-lore")));
+		setItem(23, new Item(Material.COMPARATOR).setName(I18nUtil.getLocalizedMessage("gui-settings")).setLore(I18nUtil.getLocalizedMessage("gui-settings-lore")));
+		setItem(40, new Item(Material.ARROW).setName(I18nUtil.getLocalizedMessage("gui-exit")).setLore(I18nUtil.getLocalizedMessage("gui-exit-lore")));
 		
 		return;
 	}
