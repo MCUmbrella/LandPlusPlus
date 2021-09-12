@@ -36,7 +36,7 @@ public class Command_Land_Kick implements Listener {
 							 land.removeMember(args[2]);
 							 land.save();
 								 
-							 new PrefixWriter().write(I18nUtil.getLocalizedMessage("kickmember-success").replace("NAME",args[2])).send(player);
+							 new PrefixWriter().write(I18nUtil.getLocalizedMessage("kickmember-success").replace("{NAME}",args[2])).send(player);
 						
 						}else {
 							new PrefixWriter().write(I18nUtil.getLocalizedMessage("player-not-found")).send(player);

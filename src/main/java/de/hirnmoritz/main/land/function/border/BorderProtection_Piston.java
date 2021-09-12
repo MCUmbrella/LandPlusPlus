@@ -14,8 +14,8 @@ import de.hirnmoritz.main.plugin.PluginSettings;
 public class BorderProtection_Piston implements Listener {
 	
 	@EventHandler
-	public void onEvent(BlockPistonExtendEvent event) {
-		final Block block = event.getBlock();		
+	public void onEvent(BlockPistonExtendEvent event) {//TODO: https://github.com/MCUmbrella/LandPlusPlus/issues/1
+		final Block block = event.getBlock();
 		final ArrayList<Location> outline = ChunkLocation.getOutLine(block.getWorld().getChunkAt(block.getChunk().getX(), block.getChunk().getZ()), block.getLocation().getBlockY()); 
 		final Location[] border = outline.toArray(new Location[outline.size()]);
 		

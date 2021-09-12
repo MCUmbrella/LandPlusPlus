@@ -33,14 +33,17 @@ public class BorderProtection_Break implements Listener {
 			if(PluginSettings.worlds.contains(block.getLocation().getWorld().getName())) {
 				if(border.contains(block.getLocation())) {
 					if(manager.isClaimed()) {
-						if(land.getOwner().equalsIgnoreCase(UUIDManager.getUUID(player))) {
-							if(land.getBorderMaterial() == Material.AIR || block.getY() != land.getBorderHeight()) {
+						if(land.getOwner().equalsIgnoreCase(UUIDManager.getUUID(player))||land.getMembers().contains(player.getName())) {
+							if(block.getY() != land.getBorderHeight()) {
 								event.setCancelled(false);
-							}else {
+							}
+							else if(land.getBorderMaterial() == Material.AIR) {
+								event.setCancelled(false);
+							}
+							else {
 								new PrefixWriter().write(I18nUtil.getLocalizedMessage("cant-break-border")).send(player);
 								event.setCancelled(true);
 							}
-							
 							return;
 						}else {
 							event.setCancelled(true);
